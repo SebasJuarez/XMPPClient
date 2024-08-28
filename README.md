@@ -13,9 +13,9 @@ A Python-based XMPP client with a graphical user interface built using Tkinter. 
 ## Requirements
 
 - Python 3.8+
-- \`slixmpp\` library
-- \`tkinter\` library (usually included with Python)
-- \`python-dotenv\` for managing environment variables
+- `slixmpp` library
+- `tkinter` library (usually included with Python)
+- `python-dotenv` for managing environment variables
 
 ## Installation
 
@@ -30,13 +30,13 @@ cd XMPPClient
 
 It's important to check for installation issues as this project uses a lot of libraries that are not pre-installed on Python3.
 
-Create a \`.env\` file in the root of the project to store your environment variables. For example:
+Create a `.env` file in the root of the project to store your environment variables. For example:
 
 ```bash
-echo \"DOMAIN=your-xmpp-domain.com\"
+"DOMAIN=your-xmpp-domain.com"
 ```
 
-Make sure to replace \`your-xmpp-domain.com\` with the actual domain of your XMPP server.
+Make sure to replace `your-xmpp-domain.com` with the actual domain of your XMPP server.
 
 ## Usage
 
