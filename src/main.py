@@ -237,28 +237,31 @@ class ChatClientUI:
     def __init__(self, root):
         self.root = root
         self.root.title("XMPP Chat")
-        self.root.geometry("500x300")
+        self.root.geometry("500x500")
+        self.root.configure(bg="#2c3e50")
 
-        self.frame = tk.Frame(self.root)
+        self.frame = tk.Frame(self.root, bg="#2c3e50")
         self.frame.pack(expand=True)
 
-        self.welcome_label = tk.Label(self.frame, text="Welcome to the XMPP chat")
-        self.welcome_label.pack(pady=10)
+        self.welcome_label = tk.Label(self.frame, text="Welcome to the XMPP Chat", font=("Helvetica", 16, "bold"), fg="#ecf0f1", bg="#2c3e50")
+        self.welcome_label.pack(pady=20)
 
-        self.instructions_label = tk.Label(self.frame, text="Choose an option")
-        self.instructions_label.pack(pady=5)
+        self.instructions_label = tk.Label(self.frame, text="Choose an option", font=("Helvetica", 12), fg="#bdc3c7", bg="#2c3e50")
+        self.instructions_label.pack(pady=10)
 
-        self.login_btn = tk.Button(self.frame, text="Log In", command=self.login)
-        self.login_btn.pack(pady=5)
+        button_style = {"font": ("Helvetica", 12), "bg": "#3498db", "fg": "#ffffff", "activebackground": "#2980b9", "activeforeground": "#ecf0f1", "relief": "raised", "bd": 3}
 
-        self.signup_btn = tk.Button(self.frame, text="Sign Up", command=self.signup)
-        self.signup_btn.pack(pady=5)
+        self.login_btn = tk.Button(self.frame, text="Log In", command=self.login, **button_style)
+        self.login_btn.pack(pady=10, ipadx=10, ipady=5)
 
-        self.deleteAccount_btn = tk.Button(self.frame, text="Delete Existing Account", command=self.delete_account)
-        self.deleteAccount_btn.pack(pady=5)
+        self.signup_btn = tk.Button(self.frame, text="Sign Up", command=self.signup, **button_style)
+        self.signup_btn.pack(pady=10, ipadx=10, ipady=5)
 
-        self.exit_btn = tk.Button(self.frame, text="Exit", command=self.root.destroy)
-        self.exit_btn.pack(pady=5)
+        self.deleteAccount_btn = tk.Button(self.frame, text="Delete Existing Account", command=self.delete_account, **button_style)
+        self.deleteAccount_btn.pack(pady=10, ipadx=10, ipady=5)
+
+        self.exit_btn = tk.Button(self.frame, text="Exit", command=self.root.destroy, **button_style)
+        self.exit_btn.pack(pady=10, ipadx=10, ipady=5)
 
     def login(self):
         dialog = UserDialog(self.root, "Log In", "Enter your username and password:\nThe username has to be all the info before the @")
